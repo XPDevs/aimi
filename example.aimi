@@ -1,0 +1,39 @@
+# import print
+// welcome message
+function: main {
+//define allowed symbols
+symbols = '+,-,x,÷'
+print: ("Welcome to my small prgram");
+goto: 'input'
+checkpoint: output
+output: ("Outout: %O" output);
+exit();
+}
+
+function: input {
+// ask the user for 2 numbers
+ask: ("Enter your first number: %n" num1);
+ask: ("Enter your second number: %n" num2);
+checkpoint: operation
+ask: ("What operation: %OP" operation);
+compare: {
+if: {
+'operation' = 'symbols'
+goto: calc(num1, num2, operation);
+goto: checkpoint: output
+exit();
+} else: {
+print: ("Operation not allowed");
+goto: checkpoint: operation
+// if it fails to find the checkpoint exit the program
+exit();
+  }
+}
+}
+
+function: calc {
+// now do the operation
+calc: "'num1'>'operation'>'num2' %O" ouput);
+goto checkpoint: output
+exit();
+}
